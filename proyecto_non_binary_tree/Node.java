@@ -3,56 +3,37 @@ package proyecto_non_binary_tree;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A node of any type. A node contains a data and links to it's children and
- * it's parent.
- *
- * @param <T> The class type of the node
- */
+// <T> Tipo de dato generico
 public class Node<T> {
     private T data;
     private List<Node<T>> children;
     private Node<T> parent;
 
+    // Constructor
     public Node(T data) {
         this.data = data;
         this.children = new ArrayList<Node<T>>();
     }
 
-    /**
-     * Initialize a node with another node's data.
-     * This does not copy the node's children.
-     *
-     * @param node The node whose data is to be copied.
-     */
+    // Sobre carga de constructor para inicializar con tipo de dato ya definido
     public Node(Node<T> node) {
         this.data = node.getData();
         children = new ArrayList<Node<T>>();
     }
 
-    /**
-     *
-     * Add a child to this node.
-     *
-     * @param child child node
-     */
+    // Metodo para agregar un nodo hijo
     public void addChild(Node<T> child) {
         child.setParent(this);
         children.add(child);
     }
 
-    /**
-     *
-     * Add a child node at the given index.
-     *
-     * @param index The index at which the child has to be inserted.
-     * @param child The child node.
-     */
+    // Metodo para agregar un nodo hijo a un hijo en cierto indice
     public void addChildAt(int index, Node<T> child) {
         child.setParent(this);
         this.children.add(index, child);
     }
 
+    // Metodo par aasignar nodos hijos
     public void setChildren(List<Node<T>> children) {
         for (Node<T> child : children)
             child.setParent(this);
@@ -60,37 +41,23 @@ public class Node<T> {
         this.children = children;
     }
 
-    /**
-     * Remove all children of this node.
-     */
+    // Metodo para remover todos los nodos hijos
     public void removeChildren() {
         this.children.clear();
     }
 
-    /**
-     *
-     * Remove child at given index.
-     *
-     * @param index The index at which the child has to be removed.
-     * @return the removed node.
-     */
+    // Metodo para remover un nodo hijo en especifico
     public Node<T> removeChildAt(int index) {
         return children.remove(index);
     }
 
-    /**
-     * Remove given child of this node.
-     *
-     * @param childToBeDeleted the child node to remove.
-     * @return <code>true</code> if the given node was a child of this node and was
-     *         deleted,
-     *         <code>false</code> otherwise.
-     */
+    // Metodo para identificar el nodo a eliminar
     public boolean removeChild(Node<T> childToBeDeleted) {
         List<Node<T>> list = getChildren();
         return list.remove(childToBeDeleted);
     }
 
+    // Metodos set y getter
     public T getData() {
         return this.data;
     }
@@ -124,7 +91,6 @@ public class Node<T> {
             if (((Node<?>) obj).getData().equals(this.data))
                 return true;
         }
-
         return false;
     }
 
