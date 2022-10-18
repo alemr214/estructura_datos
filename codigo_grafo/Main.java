@@ -8,6 +8,14 @@ public class Main {
     graph.addVertex("b");
     graph.addVertex("c");
     graph.addVertex("d");
+    graph.addVertex("e");
+    graph.addVertex("f");
+    graph.addVertex("g");
+    graph.addVertex("h");
+    graph.addVertex("i");
+    graph.addVertex("j");
+    graph.addVertex("k");
+    graph.addVertex("l");
 
     graph.addEdge("a", "b");
     graph.addEdge("a", "c");
