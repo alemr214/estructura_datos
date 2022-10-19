@@ -20,6 +20,13 @@ public class Main {
     graph.addEdge("a", "b");
     graph.addEdge("a", "c");
     graph.addEdge("a", "d");
+    graph.addEdge("b", "e");
+    graph.addEdge("b", "f");
+    graph.addEdge("b", "g");
+    graph.addEdge("c", "h");
+    graph.addEdge("c", "i");
+    graph.addEdge("c", "j");
+    graph.addEdge("k", "l");
 
     System.out.println(graph.getAllVertices());
     System.out.println(graph.getNeighbors("c"));
