@@ -1,4 +1,4 @@
-package codigo_grafo;
+package proyecto_grafo_unweight;
 
 import java.util.HashMap;
 import java.util.HashSet;

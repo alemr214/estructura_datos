@@ -1,12 +1,15 @@
 package proyecto_binary_tree;
 
 public class BinaryTree {
+  // Crea la raiz
   Node root;
 
+  // Constructor del arbol
   public BinaryTree() {
     root = null;
   }
 
+  // Metodo que muestra el preorden
   public void printPreorder(Node node) {
     if (node == null)
       return;
@@ -14,54 +17,51 @@ public class BinaryTree {
     System.out.println("");
     System.out.print(node.item + " ");
 
-    /* then recur on left subtree */
     printPreorder(node.left);
 
-    /* now recur on right subtree */
     printPreorder(node.right);
   }
 
+  // Metodo que inicializa el preorden
   public void printPreorder() {
     printPreorder(root);
   }
 
+  // metodo que muestra el inorden
   public void printInorder(Node node) {
     if (node == null)
       return;
 
-    /* first recur on left child */
     printInorder(node.left);
 
-    /* then print the data of node */
     System.out.print(node.item + " ");
 
-    /* now recur on right child */
     printInorder(node.right);
   }
 
+  // Metodo que inicializa el inorden
   public void printInorder() {
     printInorder(root);
   }
 
+  // Metodo que muestra el postorden
   public void printPostorder(Node node) {
     if (node == null)
       return;
 
-    // first recur on left subtree
     printPostorder(node.left);
 
-    // then recur on right subtree
     printPostorder(node.right);
 
-    // now deal with the node
     System.out.print(node.item + " ");
   }
 
-  // Wrappers over above recursive functions
+  // Metodo que inicializa el postorden
   public void printPostorder() {
     printPostorder(root);
   }
 
+  // Metodo que calcula la altura del arbol
   public int height(Node node) {
     if (node == null) {
       return 0;
@@ -69,10 +69,12 @@ public class BinaryTree {
     return 1 + Math.max(height(node.left), height(node.right));
   }
 
+  // Metodo que muestra la existencia de un nodo
   public boolean exist(int busqueda) {
     return exist(this.root, busqueda);
   }
 
+  // Metodo que busca la existencia de un nodo
   private boolean exist(Node node, int busqueda) {
     if (node == null) {
       return false;
@@ -86,6 +88,7 @@ public class BinaryTree {
     }
   }
 
+  // Cuenta cuantos nodos pares hay
   public int countParents(Node node) {
     if (node == null) {
       return 0;
@@ -98,6 +101,7 @@ public class BinaryTree {
     }
   }
 
+  // Cuenta la altura de los nodos de la derecha
   public int leftHeight(Node node) {
     int height = 0;
     while (node != null) {
@@ -107,6 +111,7 @@ public class BinaryTree {
     return height;
   }
 
+  // Cuenta la altura de los nodos de la izquierda
   public int rightHeight(Node node) {
     int height = 0;
     while (node != null) {
@@ -116,6 +121,7 @@ public class BinaryTree {
     return height;
   }
 
+  // Cuenta cuantos nodos hay en total
   public int totalNodes(Node root) {
     if (root == null)
       return 0;
