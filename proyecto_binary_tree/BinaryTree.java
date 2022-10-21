@@ -27,7 +27,7 @@ public class BinaryTree {
     printPreorder(root);
   }
 
-  // metodo que muestra el inorden
+  // Metodo que muestra el inorden
   public void printInorder(Node node) {
     if (node == null)
       return;
