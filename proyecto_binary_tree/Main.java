@@ -26,7 +26,6 @@ public class Main {
     if (tree.exist(item)) {
       System.out.println("El valor: " + item + " existe");
     }
-    System.out.println("El valor: " + item + " no existe");
     scanner.close();
   }
 }
