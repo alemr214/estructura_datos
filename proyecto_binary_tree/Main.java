@@ -25,6 +25,8 @@ public class Main {
     int item = scanner.nextInt();
     if (tree.exist(item)) {
       System.out.println("El valor: " + item + " existe");
+    } else {
+      System.out.println("El valor: " + item + " no existe");
     }
     scanner.close();
   }
