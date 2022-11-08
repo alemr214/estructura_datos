@@ -43,6 +43,7 @@ public class Main {
     System.out.println(
         "Menu de opciones\n1. Agregar elementos\n2. Eliminar elementos\n3. Imprimir los elementos\n4. Checar llenado\n5. Cantidad elementos\n6. Salir");
     do {
+      option = entrada.nextInt();
       switch (option) {
         case 1:
           list = addElements(list, entrada.nextInt());
