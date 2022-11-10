@@ -3,9 +3,6 @@ package proyecto_searching_methods.binary_search;
 import java.util.Scanner;
 
 public class Main {
-  // Java implementation of recursive Binary Search
-  // Returns index of x if it is present in arr[l..
-  // r], else return -1
   int binarySearch(int array[], int l, int r, int x) {
     if (r >= l) {
       int mid = l + (r - l) / 2;
