@@ -1,62 +1,76 @@
 package proyecto_grafo_unweight;
 
-public class Main {
+import java.util.Scanner;
+
+public class Main<T> {
+  static Scanner scanner = new Scanner(System.in);
+
+  public static void limpiarConsola() {
+    String clean = "\033[H\033[2J";
+    scanner.nextLine();
+    System.out.println("\n\t\tteclee enter para continuar ");
+    scanner.nextLine();
+    System.out.println(clean);
+  }
 
   public static void main(String[] args) {
     Graph<Integer> graph = new Graph<Integer>();
-    // graph.addVertex("a");
-    // graph.addVertex("b");
-    // graph.addVertex("c");
-    // graph.addVertex("d");
-    // graph.addVertex("e");
-    // graph.addVertex("f");
-    // graph.addVertex("g");
-    // graph.addVertex("h");
-    // graph.addVertex("i");
-    // graph.addVertex("j");
-    // graph.addVertex("k");
-    // graph.addVertex("l");
+    int option = 0, source = 0, destiny = 0, a = 0;
+    boolean flag = true;
+    do {
+      System.out.println(
+          "--- Opciones ---\n1. Crear conexion\n2. Eliminar Conexion\n3. Checa si existe un nodo\n4. Imprime el graph\n5. Imprime lista de aristas\n6. Imprime Matriz de Adyacencia\n7. Salir");
+      System.out.print("Ingrese su opcion: ");
+      option = scanner.nextInt();
 
-    // graph.addEdge("a", "b");
-    // graph.addEdge("a", "c");
-    // graph.addEdge("a", "d");
-    // graph.addEdge("b", "e");
-    // graph.addEdge("b", "f");
-    // graph.addEdge("b", "g");
-    // graph.addEdge("c", "h");
-    // graph.addEdge("c", "i");
-    // graph.addEdge("c", "j");
-    // graph.addEdge("k", "l");
+      switch (option) {
+        case 1:
+          System.out.print("Ingrese el valor del vertice que va a ingresar: ");
+          source = scanner.nextInt();
+          System.out.print("Ingrese el vertice con el cual estara conectado: ");
+          destiny = scanner.nextInt();
+          graph.addEdge(source, destiny);
+          limpiarConsola();
+          break;
+        case 2:
+          System.out.print("Ingrese el vertice fuente: ");
+          source = scanner.nextInt();
+          System.out.print("Ingrese el vertice destino: ");
+          destiny = scanner.nextInt();
 
-    graph.addVertex(0);
-    graph.addVertex(1);
-    graph.addVertex(2);
-    graph.addVertex(3);
-    graph.addVertex(4);
-    graph.addVertex(5);
-    graph.addVertex(6);
-    graph.addVertex(7);
-    graph.addVertex(8);
-    graph.addVertex(9);
-
-    graph.addEdge(0, 1);
-    graph.addEdge(0, 8);
-    graph.addEdge(0, 6);
-    graph.addEdge(1, 4);
-    graph.addEdge(1, 9);
-    graph.addEdge(1, 6);
-    graph.addEdge(2, 4);
-    graph.addEdge(2, 6);
-    graph.addEdge(3, 8);
-    graph.addEdge(3, 5);
-    graph.addEdge(3, 4);
-    graph.addEdge(4, 9);
-    graph.addEdge(4, 5);
-    graph.addEdge(7, 9);
-    graph.addEdge(7, 8);
-
-    for (int i = 0; i < 9; i++) {
-      System.out.println(graph.getNeighbors(i));
-    }
+          graph.removeEdge(source, destiny);
+          limpiarConsola();
+          break;
+        case 3:
+          System.out.print("Ingrese el vertice que desea buscar: ");
+          a = scanner.nextInt();
+          System.out.println("El vertice existe: " + graph.hasNode(a));
+          limpiarConsola();
+          break;
+        case 4:
+          System.out.println("--- graph ---");
+          graph.printAdyacencyList();
+          limpiarConsola();
+          break;
+        case 5:
+          System.out.println("--- LISTA DE ARISTAS ---");
+          graph.printEdgelist();
+          limpiarConsola();
+          break;
+        case 6:
+          System.out.println("--- MATRIZ DE ADYACENCIA ---");
+          graph.printAdyacencyMatrix();
+          limpiarConsola();
+          break;
+        case 7:
+          flag = false;
+          break;
+        default:
+          System.out.println("Opcion incorrecta");
+          System.exit(0);
+          break;
+      }
+    } while (flag == true);
+    scanner.close();
   }
 }
