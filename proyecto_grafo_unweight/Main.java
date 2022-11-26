@@ -19,7 +19,7 @@ public class Main<T> {
     boolean flag = true;
     do {
       System.out.println(
-          "--- Opciones ---\n1. Crear conexion\n2. Eliminar Conexion\n3. Checa si existe un nodo\n4. Imprime el graph\n5. Imprime lista de aristas\n6. Imprime Matriz de Adyacencia\n7. Salir");
+          "--- Opciones ---\n1. Crear conexion\n2. Eliminar Conexion\n3. Checa si existe un nodo\n4. Imprime la lista de adyacencia\n5. Imprime lista de aristas\n6. Imprime Matriz de Adyacencia\n7. Salir");
       System.out.print("Ingrese su opcion: ");
       option = scanner.nextInt();
 

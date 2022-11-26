@@ -196,7 +196,7 @@ public class Main {
     // int size = array.length;
     do {
       System.out.println(
-          "Elige tu metodo de ordenamiento:\n1.Burbuja\n2.QuickSort\n3.ShellSort\n4.RadixSort\n5.Intercalacion\n6.Mezcla\n7.Salir");
+          "Elige tu metodo de ordenamiento:\n1.Burbuja\n2.QuickSort\n3.ShellSort\n4.RadixSort\n5.Intercalacion\n6.Mezcla directa\n7.Mezcla natural\n8.Salir");
       option = scanner.nextInt();
       switch (option) {
         case 1:
@@ -242,6 +242,13 @@ public class Main {
           System.exit(0);
           break;
         case 7:
+          System.out.println("Estructura original: " + Arrays.toString(array));
+          mergeSort(array, 0, size - 1);
+          System.out.print("Estrcutura ordenada: ");
+          ua.printArray(array);
+          System.exit(0);
+          break;
+        case 8:
           System.exit(0);
           break;
         default:
