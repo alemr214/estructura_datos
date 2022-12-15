@@ -7,17 +7,27 @@ class My_Dictionary {
     // Key , Value
     Hashtable<Integer, String> my_dict = new Hashtable<Integer, String>();
     Scanner scanner = new Scanner(System.in);
+    System.out.println("Cuantos datos va a ingresar: ");
+    int size = scanner.nextInt();
+    // Llenado del diccionario
+    for (int i = 0; i < size; i++) {
+      int key;
+      String value;
+      System.out.println("Ingrese el valor de la llave en numero: ");
+      key = scanner.nextInt();
+      System.out.println("Ingrese el valor en letras");
+      value = scanner.next();
+      my_dict.put(key, value);
+    }
+
     System.out.println("Ingrese el dato a buscar: ");
     int element = scanner.nextInt();
 
-    // HashTable
-    my_dict.put(5, "Apple");
-    my_dict.put(10, "Banana");
-    my_dict.put(3, "Pears");
-    my_dict.put(1, "Watermelon");
-
-    if (my_dict.get(element) != null)
+    if (my_dict.get(element) != null) {
       System.out.println("El elemento si existe con el valor: " + my_dict.get(element));
+    } else {
+      System.out.println("El elemento no se encuentra");
+    }
     scanner.close();
   }
 }
